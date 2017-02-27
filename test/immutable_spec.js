@@ -43,6 +43,9 @@ describe('immutablity', () => {
 	});
 
 	describe('A Tree', () => {
+		function addMovieOptimized(currentState, movie) {
+			return currentState.update('movies', movies => movies.push(movie));
+		}
 		function addMovie(currentState, movie) {
 			return currentState.set('movies', currentState.get('movies').push(movie));
 		}
@@ -50,7 +53,7 @@ describe('immutablity', () => {
 			let state = Map({
 				movies: List.of('Trainspotting','28 Days Later')
 			});
-			let nextState = addMovie(state, 'Sunshine');
+			let nextState = addMovieOptimized(state, 'Sunshine');
 
 			expect(nextState).to.equal(Map({
 				movies: List.of(
