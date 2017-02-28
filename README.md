@@ -45,4 +45,11 @@ Redux
 	A store is not a class. It's just an object with a few methods on it.
 
 	To create it, pass your root reducing function to createStore.
+
+- fromJS
+- socket.io	
+	- 'Server' from socket.io
+	- babel-node (babel-cli package)
+	- WebSockets
+	- Fallback mechanisms
 	
